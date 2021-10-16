@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,17 +93,20 @@ namespace wpfTry
                 Bug();
                 Lose();
             }
-            //if (Timer5 % 1 == 0)
-            //{
-            //    for (int i = 0; i < 3; i++)
-            //    {
-            //        for (int j = 0; j < 3; j++)
-            //        {
-            //            Console.Write(garden[i, j].ToString(), " ");
-            //        }
-            //        Console.WriteLine();
-            //    }
-            //}
+            if (Timer5 % 1 == 0)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        Trace.Write(garden[i, j].ToString(), " ");
+                        //Console.Write(garden[i, j].ToString(), " ");
+                    }
+                    Trace.Write(Environment.NewLine);
+                    //Console.WriteLine();
+                }
+                Trace.Write(Environment.NewLine);
+            }
             await Task.Delay(0);
         }
 
