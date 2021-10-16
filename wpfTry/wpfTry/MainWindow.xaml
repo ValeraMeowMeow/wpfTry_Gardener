@@ -1,0 +1,170 @@
+﻿<Window x:Class="wpfTry.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfTry"
+        mc:Ignorable="d"
+        Title="wpfTry" Height="700" Width="500">
+    <Window.Resources>
+        <Style x:Key="Start" TargetType="Button">
+            <Setter Property="Background" Value="#FF9FEAAD"/>
+            <EventSetter Event="Click" Handler="Start_Click"/>
+        </Style>
+        <Style x:Key="Again" TargetType="Button">
+            <Setter Property="Background" Value="#FFA1CDF3"/>
+            <EventSetter Event="Click" Handler="Again_Click"/>
+        </Style>
+        <Style x:Key="Pole" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#FF5B554B"/>
+            <!--<EventSetter Event="Click" Handler="Pole_Click"/>-->
+        </Style>
+        <!--<Style x:Key="Pole" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#FF5B554B"/>
+            -->
+        <!--<EventSetter Event="Click" Handler="Pole_Click"/>-->
+        <!--
+        </Style>-->
+        <Style x:Key="Flowers" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#FFF8D7FA"/>
+        </Style>
+        <!--<Style x:Key="Flowers" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#FFF8D7FA"/>
+        </Style>-->
+        <Style x:Key="Tools" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#fff"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        
+        <Button Grid.Column="0" Grid.Row="0" Margin="10" Content="Старт"
+                 Style="{StaticResource Start}"/>
+        <TextBlock Grid.Column="1" Grid.Row="0" Margin="10" Text="Счёт: 00000" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   x:Name="Score"/>
+        <Button Grid.Column="2" Grid.Row="0" Margin="10" Content="Заново"
+                 Style="{StaticResource Again}"/>
+
+        <Button Grid.Column="0" Grid.Row="1" Style="{StaticResource Pole}" Click="Pole1_Click">
+            <!--<Image x:Name="fl1"/>-->
+            <!--<Image Source="/Resources/Dirt.png" Stretch="UniformToFill"/>-->
+            <!--<Image>
+                <Image.Source>
+                    <FormatConvertedBitmap Source="dirt.png" DestinationFormat="Gray32Float"/>
+                </Image.Source>
+            </Image>-->
+            <Image x:Name="fl1" Source="https://blog.firsttunnels.co.uk/wp-content/uploads/2018/05/soil.jpg" Stretch="UniformToFill"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource Pole}" Click="Pole2_Click">
+            <Image x:Name="fl2" Source="https://blog.firsttunnels.co.uk/wp-content/uploads/2018/05/soil.jpg" Stretch="UniformToFill"/>
+            <!--<Image Source="{StaticResource dirt}"/>-->
+        </Button>
+        <Button Grid.Column="2" Grid.Row="1" Style="{StaticResource Pole}" Click="Pole3_Click">
+            <Image x:Name="fl3" Source="https://blog.firsttunnels.co.uk/wp-content/uploads/2018/05/soil.jpg" Stretch="UniformToFill"/>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="2" Style="{StaticResource Pole}" Click="Pole4_Click">
+            <Image x:Name="fl4" Source="https://blog.firsttunnels.co.uk/wp-content/uploads/2018/05/soil.jpg" Stretch="UniformToFill"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Style="{StaticResource Pole}" Click="Pole5_Click">
+            <Image x:Name="fl5" Source="https://blog.firsttunnels.co.uk/wp-content/uploads/2018/05/soil.jpg" Stretch="UniformToFill"/>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="2" Style="{StaticResource Pole}" Click="Pole6_Click">
+            <Image x:Name="fl6" Source="https://blog.firsttunnels.co.uk/wp-content/uploads/2018/05/soil.jpg" Stretch="UniformToFill"/>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="3" Style="{StaticResource Pole}" Click="Pole7_Click">
+            <Image x:Name="fl7" Source="https://blog.firsttunnels.co.uk/wp-content/uploads/2018/05/soil.jpg" Stretch="UniformToFill"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="3" Style="{StaticResource Pole}" Click="Pole8_Click">
+            <Image x:Name="fl8" Source="https://blog.firsttunnels.co.uk/wp-content/uploads/2018/05/soil.jpg" Stretch="UniformToFill"/>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="3" Style="{StaticResource Pole}" Click="Pole9_Click">
+            <Image x:Name="fl9" Source="https://blog.firsttunnels.co.uk/wp-content/uploads/2018/05/soil.jpg" Stretch="UniformToFill"/>
+        </Button>
+        <!--<TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource Pole}">
+            <Image Source="/Resources/Dirt.png" Stretch="UniformToFill"/>
+        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="1" Style="{StaticResource Pole}">
+            <Image Source="/Resources/Dirt.png" Stretch="UniformToFill"/>
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="1" Style="{StaticResource Pole}">
+            <Image Source="/Resources/Dirt.png" Stretch="UniformToFill"/>
+        </TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource Pole}">
+            <Image Source="/Resources/Dirt.png" Stretch="UniformToFill"/>
+        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="2" Style="{StaticResource Pole}">
+            <Image Source="/Resources/Dirt.png" Stretch="UniformToFill"/>
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="2" Style="{StaticResource Pole}">
+            <Image Source="/Resources/Dirt.png" Stretch="UniformToFill"/>
+        </TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource Pole}">
+            <Image Source="/Resources/Dirt.png" Stretch="UniformToFill"/>
+        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="3" Style="{StaticResource Pole}">
+            <Image Source="/Resources/Dirt.png" Stretch="UniformToFill"/>
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="3" Style="{StaticResource Pole}">
+            <Image Source="/Resources/Dirt.png" Stretch="UniformToFill"/>
+        </TextBlock>-->
+
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="Цветочки" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Button Grid.Column="0" Grid.Row="5" Style="{StaticResource Flowers}"
+                Click="Flower1_Click">
+            <Image Source="https://www.textures.com/system/gallery/photos/Nature/Flower%20Beds/34385/FlowerBeds0012_1_600.jpg?v=5" Stretch="UniformToFill"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="5" Style="{StaticResource Flowers}"
+                Click="Flower2_Click">
+            <Image Source="https://cdn.pixabay.com/photo/2012/07/09/13/19/blue-pillow-52186_640.jpg" Stretch="UniformToFill"/>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="5" Style="{StaticResource Flowers}"
+                Click="Flower3_Click">
+            <Image Source="https://www.textures.com/system/gallery/photos/Nature/Flower%20Beds/34365/FlowerBeds0036_1_350.jpg" Stretch="UniformToFill"/>
+        </Button>
+        <!--<TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource Flowers}">
+            <Image Source="/Resources/flowers1.png" Stretch="UniformToFill"/>
+        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4" Style="{StaticResource Flowers}">
+            <Image Source="/Resources/flowers2.png" Stretch="UniformToFill"/>
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="4" Style="{StaticResource Flowers}">
+            <Image Source="/Resources/flowers3.png" Stretch="UniformToFill"/>
+        </TextBlock>-->
+
+        <TextBlock Grid.Column="1" Grid.Row="6" Text="Инструменты" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Button Grid.Column="0" Grid.Row="7" Click="Tool1_Click" Style="{StaticResource Tools}">
+            <Image Source="https://www.dejurka.ru/wp-content/uploads/2014/04/garden-elements-illustrator-9_6.jpg" Stretch="Uniform"/>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="7" Click="Tool2_Click" Style="{StaticResource Tools}">
+            <Image Source="https://st4.depositphotos.com/27867620/30453/v/450/depositphotos_304531492-stock-illustration-sickle-web-icon-simple-illustration.jpg" Stretch="Uniform"/>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="7" Click="Tool3_Click" Style="{StaticResource Tools}">
+            <Image Source="https://stihi.ru/pics/2017/01/10/11245.jpg" Stretch="Uniform"/>
+        </Button>
+
+    </Grid>
+</Window>
